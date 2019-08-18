@@ -290,6 +290,10 @@ A very powerful tool that is kind of cornerstone of the whole design of systems 
 
 ### 9. Overloading vs overriding
 
+_Overloading_ means that a function can have the same name but different parameters or different constant specifiers. The compiler will find which function to use depending on the parameters on the signature of the function.
+
+_Overriding_ is different, they have exactly the same signature they have the same parameters, they hae the same constant and so on. The only different is that they belong to the different class and this happens at runtime. The processor has to go through some table stored within your class and find I need this function overthere in this particular class.
+
 * Do not confuse function overloading and overriding
 
 * Overloading:
@@ -300,4 +304,20 @@ A very powerful tool that is kind of cornerstone of the whole design of systems 
 
 * Overriding
     * Pick from functions with the <font color='red'>same arguments and names</font> in different classes of <font color='red'>one class hierarchy</font>
-    * Pick <font color='red'>at run time</font> 
+    * Pick <font color='red'>at runtime</font> 
+
+
+### 10. Abstract classes and interfaces
+
+* Abstract class: class that has at least one pure virtual function
+* Interface: class that has only pure virtual functions and no data members 
+
+### 11. How virtual works
+
+Whenever you use virtual, you are acutally using runtime polymorphism. It means that if you have a reference to say your base class, it can be any of the references of your derived classes. 
+
+
+* A class with virtual functions has a virtual table
+* When calling a function the class checks which of the virtual functions that match the signature should be called
+* Called <font color='red'>runtime polymorphism</font>
+* Costs some time but is very convenient 
